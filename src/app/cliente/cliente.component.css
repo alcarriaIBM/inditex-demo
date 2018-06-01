@@ -108,6 +108,16 @@
     width: 100%;
 }
 
+.transparente {
+  background-color: WhiteSmoke;
+  opacity: 0.3;
+}
+
+.transparente:hover {
+    opacity: 1.0;
+    background-color: WhiteSmoke;
+  }
+
 form.example input[type=text] {
     padding: 10px;
     font-size: 17px;

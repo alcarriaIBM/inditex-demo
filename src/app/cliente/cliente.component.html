@@ -16,6 +16,9 @@
         <img src="../../assets/Logo.svg.png" alt="Zara demo" style="width:80px;height:15px;border:0;">
       </a>
     </li>
+    <li>
+      Página de Cliente
+    </li>
   <li style="float:right">
     <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
     <input type="text" placeholder="Buscar" name="search2">
@@ -28,7 +31,7 @@
 
 
   <div class="sidenav">
-    <button class="dropdown-btn">Pagina de Cliente
+    <button class="dropdown-btn">Menú Desplegable
       <i class="fa fa-caret-down"></i>
     </button>
 
@@ -38,28 +41,39 @@
 <div class="main">
   <div class="column">
 
-    <ul id="grid" class="grid">
-        <li class="grid-item" *ngFor="let image of images">
-            <img [src]="'https://picsum.photos/900/500?image='+image.id" />
-            <br>
-        </li>
-    </ul>
+    <mat-grid-list cols="3">
+      <mat-grid-tile  *ngFor="let image of images" >
+        <mat-card>
+          <img mat-card-image [src]="'https://picsum.photos/900/500?image='+image.id">
+            <mat-card-actions>
+              <button mat-button>
+                <mat-icon>favorite</mat-icon>
+              </button>
+              <button mat-button>
+                <mat-icon>share</mat-icon>
+              </button>
+              <button mat-button>
+                <mat-icon>shopping_cart</mat-icon>
+              </button>
+            </mat-card-actions>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
 
   </div>
 </div>
 
 <div class="derecha">
-  <button   class="collapsible" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
-          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Chat Bot</button>
+  <button   mat-button (click)="isCollapsed = !isCollapsed" style="float:center"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+          <mat-icon>face</mat-icon> Chat Bot
+        </button>
 
-  <div id="collapseExample" [ngbCollapse]="isCollapsed">
+  <div id="collapseExample" [ngbCollapse]="isCollapsed" class="transparente">
 
-  <h3>Conversación con el bot</h3>
+  <h4>Conversación</h4>
   <table class="table">
-    <thead>
-      <tr>
-      </tr>
-    </thead>
+
     <tbody>
       <td>Tú: {{ words.input }}</td>
       <tr>
