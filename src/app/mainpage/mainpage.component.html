@@ -1,0 +1,184 @@
+<div >
+
+  <div class="topnav" style="width:100%">
+
+  <ul>
+    <li><a routerLink="/administrador">Administrador</a></li>
+    <li><a routerLink="/cliente">Clientes</a></li>
+    <li><a routerLink="/dependiente">Dependiente</a></li>
+    <li style="float:right"><a >Cesta</a></li>
+    <li style="float:right"><a  >Contacto</a></li>
+    <li style="float:right"><a  >Iniciar Sesión</a></li>
+  </ul>
+  <ul>
+    <li>
+      <a [routerLink]="['/mainpage']">
+        <img src="../../assets/Logo.svg.png" alt="Zara demo" style="width:80px;height:15px;border:0;">
+      </a>
+    </li>
+  <li style="float:right">
+    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+    <input type="text" placeholder="Buscar" name="search2">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  </li>
+</ul>
+</div>
+
+
+
+  <div class="sidenav">
+    <button class="dropdown-btn">ÚLTIMA SEMANA
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="/">MUJER</a>
+      <a href="/">TRF</a>
+      <a href="/">HOMBRE</a>
+      <a href="/">NIÑOS</a>
+      <a href="/">STORIES</a>
+
+    </div>
+    <button class="dropdown-btn">MUJER
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="/">Link 1</a>
+      <a href="/">Link 2</a>
+      <a href="/">Link 3</a>
+    </div>
+    <button class="dropdown-btn">TRF
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="/">Link 1</a>
+      <a href="/">Link 2</a>
+      <a href="/">Link 3</a>
+    </div>
+    <button class="dropdown-btn">HOMBRE
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="/">Link 1</a>
+      <a href="/">Link 2</a>
+      <a href="/">Link 3</a>
+    </div>
+    <button class="dropdown-btn">NIÑOS
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="/">Link 1</a>
+      <a href="/">Link 2</a>
+      <a href="/">Link 3</a>
+    </div>
+    <a href="/">Niños</a>
+  <button class="dropdown-btn">Stories
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="/">Link 1</a>
+    <a href="/">Link 2</a>
+    <a href="/">Link 3</a>
+  </div>
+  <button class="dropdown-btn">JOIN LIFE
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="/">Link 1</a>
+    <a href="/">Link 2</a>
+    <a href="/">Link 3</a>
+  </div>
+
+
+<button class="dropdown-btn">+Info
+  <i class="fa fa-caret-down"></i>
+</button>
+<div class="dropdown-container">
+  <a href="/">Link 1</a>
+  <a href="/">Link 2</a>
+  <a href="/">Link 3</a>
+</div>
+</div>
+
+<div class="main">
+  <div class="column">
+
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <img [src]="images[0]" alt="Random first slide">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img [src]="images[1]"  alt="Random second slide">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <img [src]="images[2]" alt="Random third slide">
+        <div class="carousel-caption">
+          <h3></h3>
+          <p></p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+  </div>
+</div>
+
+<div class="derecha">
+  <button   class="collapsible" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Chat Bot</button>
+
+  <div id="collapseExample" [ngbCollapse]="isCollapsed">
+
+  <h3>Conversacion con el bot</h3>
+  <table class="table">
+    <thead>
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
+      <td>Tú: {{ words.input }}</td>
+      <tr>
+      </tr>
+      <td>Bot: {{ words.output }}</td>
+        <tr></tr>
+    </tbody>
+  </table>
+    <div class="row">
+      <div class="col-md-6">
+        <form (ngSubmit)="addConversacion()" #conversacionForm="ngForm">
+          <div class="form-group">
+            <label for="name">Tú</label>
+            <input type="text" class="form-control" [(ngModel)]="conversacion.input" name="cInput" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success" [disabled]="!conversacionForm.form.valid">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+  <p ng-bind-html="words"></p>
+</div>
+</div>
+
+  <div class="footer" style="float:center">
+    <ul>
+      <li><a style="float:center">Instagram</a></li>
+      <li><a style="float:center">Facebook</a></li>
+      <li><a style="float:center">Pinterest</a></li>
+      <li ><a style="float:center">Youtube</a></li>
+    </ul>
+    <p style="float:right">
+      POLITICA DE PRIVACIDAD | CONDICIONES DE COMPRA
+    </p>
+  </div>
+
+</div>

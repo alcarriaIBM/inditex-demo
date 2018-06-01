@@ -1,0 +1,102 @@
+<div >
+
+  <div class="topnav" style="width:100%">
+
+  <ul>
+    <li><a routerLink="/administrador">Administrador</a></li>
+    <li><a routerLink="/cliente">Clientes</a></li>
+    <li><a routerLink="/dependiente">Dependiente</a></li>
+    <li style="float:right"><a >Cesta</a></li>
+    <li style="float:right"><a  >Contacto</a></li>
+    <li style="float:right"><a  >Iniciar Sesión</a></li>
+  </ul>
+  <ul>
+    <li>
+      <a [routerLink]="['/mainpage']">
+        <img src="../../assets/Logo.svg.png" alt="Zara demo" style="width:80px;height:15px;border:0;">
+      </a>
+    </li>
+  <li style="float:right">
+    <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+    <input type="text" placeholder="Buscar" name="search2">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  </li>
+</ul>
+</div>
+
+
+
+  <div class="sidenav">
+    <button class="dropdown-btn">Pagina de Cliente
+      <i class="fa fa-caret-down"></i>
+    </button>
+
+
+</div>
+
+<div class="main">
+  <div class="column">
+
+    <ul id="grid" class="grid">
+        <li class="grid-item" *ngFor="let image of images">
+            <img [src]="'https://picsum.photos/900/500?image='+image.id" />
+            <br>
+        </li>
+    </ul>
+
+  </div>
+</div>
+
+<div class="derecha">
+  <button   class="collapsible" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Chat Bot</button>
+
+  <div id="collapseExample" [ngbCollapse]="isCollapsed">
+
+  <h3>Conversación con el bot</h3>
+  <table class="table">
+    <thead>
+      <tr>
+      </tr>
+    </thead>
+    <tbody>
+      <td>Tú: {{ words.input }}</td>
+      <tr>
+      </tr>
+      <td>Bot: {{ words.output }}</td>
+        <tr></tr>
+    </tbody>
+  </table>
+    <div class="row">
+      <div class="col-md-6">
+        <form (ngSubmit)="findAuthors()" #conversacionForm="ngForm">
+          <div class="form-group">
+            <label for="name">Tú</label>
+            <input type="text" class="form-control" [(ngModel)]="conversacion.input" name="cInput" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success" [disabled]="!conversacionForm.form.valid">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+  <p ng-bind-html="words"></p>
+</div>
+</div>
+
+  <div class="footer" style="float:center">
+    <ul>
+      <li><a style="float:center">Instagram</a></li>
+      <li><a style="float:center">Facebook</a></li>
+      <li><a style="float:center">Pinterest</a></li>
+      <li ><a style="float:center">Youtube</a></li>
+    </ul>
+    <p style="float:right">
+      POLITICA DE PRIVACIDAD | CONDICIONES DE COMPRA
+    </p>
+  </div>
+
+</div>
